@@ -1,22 +1,16 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import AppRouter from "./routers/AppRouter";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <AppRouter />
+      <footer className="App-footer">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>LEARNING...</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>MADE WITH RECHARTS</p>
+      </footer>
     </div>
   );
 }
