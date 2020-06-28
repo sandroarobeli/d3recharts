@@ -13,15 +13,19 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.App-footer {
+  background-color: inherit;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #61dafb;
+  transform: scale(0.3);
+  position: absolute;
+  bottom: -17rem;
+  right: -7rem;
 }
 
 .App-link {

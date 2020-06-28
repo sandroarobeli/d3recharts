@@ -1,0 +1,8 @@
+.initial {
+  color: #33adff;
+  text-decoration: none;
+}
+.is-active {
+  font-weight: bold;
+  color: #33adff;
+}
