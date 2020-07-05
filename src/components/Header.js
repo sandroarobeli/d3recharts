@@ -16,8 +16,8 @@ const Header = () => (
     <NavLink to="/usgdp" activeClassName="is-active" className="initial">
       US GDP Histogram
     </NavLink>
-    <NavLink to="/project2" activeClassName="is-active" className="initial">
-      Project 2
+    <NavLink to="/doping" activeClassName="is-active" className="initial">
+      Cycler Doping Scatter Plot
     </NavLink>
     <NavLink to="/project3" activeClassName="is-active" className="initial">
       Project 3
