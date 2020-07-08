@@ -10,6 +10,7 @@ import {
   Tooltip,
   Cell,
   Label,
+  ZAxis,
 } from "recharts";
 
 // Display dimensions
@@ -41,6 +42,7 @@ class DopingPage extends PureComponent {
           return {
             x: element.Year,
             y: element.Seconds,
+            z: element.Doping,
           };
         });
 
@@ -85,8 +87,8 @@ class DopingPage extends PureComponent {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
-            dataKey="x"
-            name="Years"
+            dataKey="x" // actual coordinates data comes from here
+            name="Year" // label name for what's on axis (and Tooltip)
             type="number"
             domain={[Math.min(years), Math.max(years)]}
             padding={{ left: 30, right: 30 }}
@@ -107,7 +109,7 @@ class DopingPage extends PureComponent {
           </XAxis>
           <YAxis
             dataKey="y"
-            name="Times"
+            name="Result time"
             type="number"
             domain={[Math.min(results), Math.max(results)]}
             padding={{ bottom: 30, top: 30 }}
@@ -127,6 +129,22 @@ class DopingPage extends PureComponent {
               offset: 70,
             }}
           />
+          <ZAxis dataKey={"z"} name="Notes" />
+
+          <Tooltip
+            wrapperStyle={{
+              opacity: 0.75,
+              color: "#33adff",
+
+              fontWeight: 600,
+              textAlign: "left",
+            }}
+            separator=" - "
+            // TOOLTIP DATA FORMATTING STILL NEEDS SOME RESEARCH...
+            //  formatter={(value) =>
+            //    Math.trunc(value / 60).toString() + ":" + (value % 60).toString()
+            //  }
+          />
 
           <Scatter
             shape="circle"
@@ -136,6 +154,7 @@ class DopingPage extends PureComponent {
           >
             {data.map((value, index) => (
               <Cell
+                className="dot"
                 cursor="pointer"
                 key={`cell-${index}`}
                 fill={value.Doping ? "#f43128" : "#16f50a"}
